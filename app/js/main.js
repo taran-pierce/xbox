@@ -1,2 +1,3 @@
-console.log('wtf');
-console.log('is going on');
+$(document).ready(function() {
+	console.log('jQuery and the document are ready');
+});
