@@ -1,4 +1,4 @@
-#REPO FOR TESTING OUT THE XBOX ONE API
+# REPO FOR TESTING OUT THE XBOX ONE API
 
 Creating this repo to do some messing around with the Xbox One API.
 
@@ -6,14 +6,16 @@ Creating this repo to do some messing around with the Xbox One API.
 
 This repo has some basic gulp tooling to help set everything up.
 
-## Installation
-
-## node & bower dependencies
+## Install Node and Bower dependencies
 npm install
 
 bower install
 
-gulp
+### Gulp Commands
+#### gulp build
+Builds the app
+#### gulp
+Builds app and watches for changes to any files. Also runs Browser Sync for live reload
 
 ## Tests
 
