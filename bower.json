@@ -1,0 +1,23 @@
+{
+  "name": "xbox API",
+  "homepage": "https://github.com/taran-pierce/xbox",
+  "authors": [
+    "Taran Pierce <taran.pierce@endurance.com>"
+  ],
+  "description": "Testing out what I can do with the xbox API",
+  "main": "",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-sass": "^3.3.7",
+    "jQuery": "^3.1.1",
+    "gulp": "^3.9.1"
+  }
+}
