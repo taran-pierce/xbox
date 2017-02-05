@@ -9,11 +9,10 @@ This repo has some basic gulp tooling to help set everything up.
 ## Install Node and Bower dependencies
 npm install
 
+cd app
 bower install
 
 ### Gulp Commands
-#### gulp build
-Builds the app
 #### gulp
 Builds app and watches for changes to any files. Also runs Browser Sync for live reload
 
