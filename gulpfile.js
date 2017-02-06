@@ -49,7 +49,7 @@ gulp.task('images', function(){
   .pipe(cache(imagemin({
       interlaced: true
     })))
-  .pipe(gulp.dest('dist/img'))
+  .pipe(gulp.dest('app/img'))
 });
 
 gulp.task('fonts', function() {

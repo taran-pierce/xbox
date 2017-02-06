@@ -5815,5 +5815,33 @@ button.close {
     display: none !important; } }
 
 body {
-  background: #333;
-  color: #fafafa; }
+  background: url("/img/body-bg.png");
+  color: #333;
+  margin: 0;
+  padding: 0; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0; }
+
+header {
+  background: rgba(0, 0, 0, 0.6);
+  border-bottom: 1px solid #333;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+  color: #fafafa;
+  padding: 20px 0;
+  margin-bottom: 20px; }
+
+.main-content {
+  margin-top: 20px; }
+
+.user-card {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(0, 0, 0, 0.7);
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+  padding: 20px; }

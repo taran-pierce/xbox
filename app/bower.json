@@ -18,6 +18,7 @@
   "dependencies": {
     "bootstrap-sass": "^3.3.7",
     "jQuery": "^3.1.1",
-    "gulp": "^3.9.1"
+    "gulp": "^3.9.1",
+    "bourbon": "^4.3.0"
   }
 }
