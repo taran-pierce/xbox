@@ -15,36 +15,142 @@ D.xbox = {
     $submitButton.on('click', function(e) {
       e.preventDefault();
 
-      D.xbox.render($form);
+      // clear form
+      $('#xbox-user-content').empty();
+
+      // create data object
+      var data = data || {};
+
+      // grab userName from form
+      data.userName = D.xbox.getUserName($form);
+
+      data.apiURL = 'https://xboxapi.com/v2/';
+
+      // TODO maybe this should just be an init which then triggers everything
+      // set loading screen for User which triggers API call
+      D.xbox.setLoadingScreen(data);
 	})
   },
+  setLoadingScreen: function(data) {
+    var $contentSection = $('#xbox-user-content'),
+        loadingIcon = '<i class="fa fa-spinner fa-spin" aria-hidden="true"></i>';
+
+    // add the loading class and remove the empty class
+    $contentSection.addClass('loading').removeClass('empty');
+
+    // insert loading icon
+    $contentSection.append(loadingIcon);
+
+    // get XUID
+    D.xbox.getXUID(data);
+  },
   getUserName: function($form) {
-    // grab user name
+    // grab user name from form
     var userName = $form.find('input[name="gamer_tag"]').val();
 
-    var xhr = new XMLHttpRequest();
-    xhr.open("GET", "https://xboxapi.com/v2/accountxuid", false);
-    xhr.send();
-    
-    console.log(xhr.status);
-    console.log(xhr.statusText);
-
-    var data = data || {};
-    data.userName = userName;
-
-	return data;
+	return userName;
   },
-  render: function($form) {
-    var $userTemplate = $($('#user-template').html()),
-        $userSection = $('#xbox-user');
+  getMyXUID: function(data) {
+    $.ajax({
+        url: "https://xboxapi.com/v2/accountxuid",
+        type: 'GET',
+        dataType: 'json',
+        contentType: 'application/json',
+        processData: false,
+        headers: {
+          // X-AUTH token from xbox live API goes here
+          //'X-AUTH' : '' 
+        },
+        success: function (myXbox) {
+          data.myXbox = myXbox;
+          D.xbox.callAPI(data);
+        },
+        error: function(){
+          alert("Cannot get data from get XUID");
+        }
+    });
+  },
+  getXUID: function(data) {
+    $.ajax({
+        url: "https://xboxapi.com/v2/xuid/" + data.userName,
+        type: 'GET',
+        dataType: 'json',
+        contentType: 'application/json',
+        processData: false,
+        headers: {
+          // X-AUTH token from xbox live API goes here
+          //'X-AUTH' : '' 
+        },
+        success: function (xboxPlayerData) {
+          // sets the players xuid number in the data object 
+          data.xboxPlayerData = xboxPlayerData;
 
+          // triggerx the API call
+          D.xbox.callAPI(data);
+        },
+        error: function(){
+          alert("Could not find player.");
+        }
+    });
+  },
+  callAPI: function(data) {
+    $.ajax({
+        url: data.apiURL + data.xboxPlayerData.xuid +"/profile",
+        type: 'GET',
+        dataType: 'json',
+        contentType: 'application/json',
+        processData: false,
+        headers: {
+          // X-AUTH token from xbox live API goes here
+          //'X-AUTH' : '' 
+        },
+        success: function (playerData) {
+          var $contentSection = $('#xbox-user-content');
 
-    var data = D.xbox.getUserName($form);
+          $contentSection.removeClass('loading');
+          $contentSection.find('.fa-spinner').remove();
 
-	console.log('userTemplate: ', $userTemplate);
+          data.playerData = playerData;
 
-    $userTemplate.find('.user-name').text(data.userName);
+          D.xbox.render(data);
+        },
+        error: function(){
+          alert("Cannot get data");
+        }
+    });
+  },
+  render: function(data) {
+    var apiData = '<pre></pre>',
+        $contentSection = $('#xbox-user-content'),
+		$playerCardTemplate = $($('#player-card-template').html());
 
-    $userSection.append($userTemplate);
+    // set player name
+    $playerCardTemplate.find('.name').text(data.playerData.GameDisplayName);
+
+    // set gamerscore
+    $playerCardTemplate.find('.gamer-score').text('Gamerscore: ' + data.playerData.Gamerscore);
+
+	// build gamer pic
+    var gamerPic = '<img class="img-responsive" src="'
+                   + data.playerData.GameDisplayPicRaw +
+                   '" title="'
+                   + data.playerData.GameDisplayName
+                   + '" />';
+
+    // add gamer pic to template
+    $playerCardTemplate.find('.gamer-pic').append(gamerPic);
+
+    // add account teir
+    $playerCardTemplate.find('.account-tier').text('Account Teir: ' + data.playerData.AccountTier);
+
+    // add account teir
+    $playerCardTemplate.find('.player-rep').text('Player Reputation: ' + data.playerData.XboxOneRep);
+
+    // add template to content section
+    $contentSection.append($playerCardTemplate);
+
+    // TODO temp just showing data
+    //$('.main-content').append(apiData);
+    //$('.main-content').find('pre').text(JSON.stringify(data, null, 2));
   }
 };

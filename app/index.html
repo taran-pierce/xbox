@@ -9,14 +9,12 @@
 			<h1 class="text-center">Xbox One API</h1>
 		</header>
 		<div class="container">
-			<div class="row">
-				<div class="col-xs-12">
-					<h2>Purpose</h2>
-					<p>I just want to do some testing on how I can work with the Xbox Live API.</p>
-				</div>
-			</div>
 			<div class="main-content">
 				<div class="row">
+					<div class="col-xs-12">
+						<h1>Player Profile</h1>
+						<p>Enter your Xbox Live gamer tag below and this will contact the Xbox Live API and retrieve your profile data.</p>
+					</div>
 					<div class="col-xs-6">
 						<h3>Xbox Live GamerTag</h3>
 						<form id="form-user-name" method="GET">
@@ -24,15 +22,8 @@
 							<button type="submit">Submit</button>
 						</form>
 					</div>
-					<div class="col-xs-6">
-						<div id="xbox-user"></div>
-						<script type="template" id="user-template">
-							<div class="user-card">
-								<h3 class="user-name"></h3>
-							</div>
-						</script>
-					</div>
 				</div>
+				<div id="xbox-user-content" class="box empty"></div>
 			</div>
 		</div>
 
@@ -41,5 +32,26 @@
 		<script src="bower_components/bootstrap-sass/assets/javascripts/bootstrap.js"></script>
 		<script src="js/main.js"></script>
 		<!-- endbuild -->
+
+		<script type="template" id="user-template">
+			<div class="user-card box">
+				<h3 class="user-name"></h3>
+			</div>
+		</script>
+		<script type="template" id="player-card-template">
+			<div class="player-card">
+				<div class="row">
+					<div class="col-xs-12 col-sm-4">
+						<div class="gamer-pic"></div>
+					</div>
+					<div class="col-xs-12- col-sm-8">
+						<h3 class="name"></h3>
+						<h4 class="gamer-score"></h4>
+						<p class="account-tier"></p>
+						<p class="player-rep"></p>
+					</div>
+				</div>
+			</div>
+		</script>
 	</body>
 </html>
