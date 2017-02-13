@@ -24,7 +24,11 @@ D.xbox = {
       // grab userName from form
       data.userName = D.xbox.getUserName($form);
 
+      // set apiURL
       data.apiURL = 'https://xboxapi.com/v2/';
+
+      // set X-AUTH token
+      //data.xAuth = '';
 
       // TODO maybe this should just be an init which then triggers everything
       // set loading screen for User which triggers API call
@@ -58,8 +62,7 @@ D.xbox = {
         contentType: 'application/json',
         processData: false,
         headers: {
-          // X-AUTH token from xbox live API goes here
-          //'X-AUTH' : '' 
+          'X-AUTH' : data.xAuth 
         },
         success: function (myXbox) {
           data.myXbox = myXbox;
@@ -78,8 +81,7 @@ D.xbox = {
         contentType: 'application/json',
         processData: false,
         headers: {
-          // X-AUTH token from xbox live API goes here
-          //'X-AUTH' : '' 
+          'X-AUTH' : data.xAuth 
         },
         success: function (xboxPlayerData) {
           // sets the players xuid number in the data object 
@@ -101,8 +103,7 @@ D.xbox = {
         contentType: 'application/json',
         processData: false,
         headers: {
-          // X-AUTH token from xbox live API goes here
-          //'X-AUTH' : '' 
+          'X-AUTH' : data.xAuth 
         },
         success: function (playerData) {
           var $contentSection = $('#xbox-user-content');
@@ -116,6 +117,44 @@ D.xbox = {
         },
         error: function(){
           alert("Cannot get data");
+        }
+    });
+  },
+  getUserGameClips: function(data) {
+    $.ajax({
+        url: data.apiURL + data.xboxPlayerData.xuid + "/game-clips",
+        type: 'GET',
+        dataType: 'json',
+        contentType: 'application/json',
+        processData: false,
+        headers: {
+          'X-AUTH' : data.xAuth 
+        },
+        success: function (clipData) {
+          data.clipData = clipData;
+          //console.log(data);
+        },
+        error: function(){
+          alert("Cannot get game clip data");
+        }
+    });
+  },
+  getUserGamerCard: function(data) {
+    $.ajax({
+        url: data.apiURL + data.xboxPlayerData.xuid + "/gamercard",
+        type: 'GET',
+        dataType: 'json',
+        contentType: 'application/json',
+        processData: false,
+        headers: {
+          'X-AUTH' : data.xAuth 
+        },
+        success: function (gamerCard) {
+          data.gamerCard = gamerCard;
+          console.log(data);
+        },
+        error: function(){
+          alert("Cannot get game clip data");
         }
     });
   },
@@ -149,8 +188,7 @@ D.xbox = {
     // add template to content section
     $contentSection.append($playerCardTemplate);
 
-    // TODO temp just showing data
-    //$('.main-content').append(apiData);
-    //$('.main-content').find('pre').text(JSON.stringify(data, null, 2));
+    //D.xbox.getUserGameClips(data);
+    D.xbox.getUserGamerCard(data);
   }
 };
