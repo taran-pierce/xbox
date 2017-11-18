@@ -1,0 +1,18 @@
+{
+  "name": "jump-start-app",
+  "version": "1.0.0",
+  "description": "Quick Start a project",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Taran Pierce",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap-sass": "^3.3.7",
+    "jquery": "^3.2.1"
+  },
+  "devDependencies": {
+    "font-awesome": "^4.7.0"
+  }
+}
