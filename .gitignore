@@ -3,3 +3,5 @@
 .gitignore
 .DS_Store
 dist/
+node_modules/
+app/css/
