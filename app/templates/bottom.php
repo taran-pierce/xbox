@@ -1,5 +1,5 @@
     <?php include 'footer.php' ?>
-    <!-- build:js js/bootstrap-bundle.js -->
+    <!-- build:js /js/bootstrap-bundle.js -->
     <script type="text/javascript" src="../node_modules/jquery/dist/jquery.js"></script> 
     <script type="text/javascript" src="../node_modules/bootstrap-sass/assets/javascripts/bootstrap/button.js"></script> 
     <script type="text/javascript" src="../node_modules/bootstrap-sass/assets/javascripts/bootstrap/collapse.js"></script> 
@@ -9,6 +9,5 @@
     <script type="text/javascript" src="../node_modules/bootstrap-sass/assets/javascripts/bootstrap/tooltip.js"></script> 
     <script type="text/javascript" src="../js/main.js"></script> 
     <!-- endbuild -->
-
   </body>
 </html>
