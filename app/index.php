@@ -13,6 +13,12 @@
         lot of extra details you may not care about.</p>
         <?php include( 'templates/forms/_form-profile.php' ); ?>
       </div>
+      <div class="col-xs-12">
+        <div id="user-profile" class="card">
+          <h4>Name:</h4>
+
+        </div>
+      </div>
     </div>
   </div>
 </section>
