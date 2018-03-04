@@ -1,7 +1,7 @@
 <?php
   # put your token ID here
   # you get this from: https://xboxapi.com/
-  $token = "1aa66306d38baca0e5ded32ab8ff437c8a72bcb5";
+  $token = "API KEY GOES HERE";
 
   $headers = array();
 
