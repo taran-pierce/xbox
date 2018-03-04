@@ -1,11 +1,12 @@
 <?php
+
   # pull in conf file
   require( "../../conf/config.php" );
 
   # get gamer tag value
   $xuid = $_GET["id"];
 
-  # End point information 
+  # End point information
   $base_url = "https://xboxapi.com/v2";
 
   # profile endpoint
@@ -26,6 +27,5 @@
 
   # close connection
   curl_close($cGamerGameClips);
-
   echo $gamer_game_clips;
 ?>

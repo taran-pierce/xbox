@@ -5,12 +5,11 @@
   # get gamer tag value
   $xuid = $_GET["id"];
 
-  # End point information 
+  # End point information
   $base_url = "https://xboxapi.com/v2";
 
   # profile endpoint
   $get_gamer_friends = "$base_url/$xuid/friends";
-
 
   # Get Gamer Profile
   $cGamerFriends = curl_init();
@@ -27,6 +26,5 @@
 
   # close connection
   curl_close($cGamerFriends);
-
   echo $gamer_friends;
 ?>

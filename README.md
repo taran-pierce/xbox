@@ -1,5 +1,5 @@
-# jump-start
-The purpose of jump-start is to get you quickly only your way developing your website. It utilizes npm to handle it's dependencies so it's easy to get up and running with what is already set up.
+# xbox-api
+Search for people by their gamer tag so you can check out various things about their profile.
 
 ## Setup
 First thing you will need to do is install all of the dependencies to get your project started. Everything is saved to the package.json so a `npm install` will get everything you need installed properly.
@@ -18,7 +18,7 @@ This will help you create or modify any of the tasks you see already in this fil
 This of course can be modified, but the gulpfile.js will need to be updated as well if you do so that all assets get placed in the location you are expecting.
 
 ```
-  /project
+  /xbox-api
   |
   |-app
   |  |-scss
