@@ -5,3 +5,30 @@
 @import '../node_modules/bootstrap-sass/assets/stylesheets/bootstrap';
 
 //@import '../node_modules/font-awesome/scss/font-awesome';
+
+$progress-pills: #1B6D85;
+
+.api-progress {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+
+  li {
+    text-align: center;
+    width: 33.3%;
+
+    span {
+      background-color: transparent;
+      border: 1px solid darken($progress-pills, 10%);
+      border-radius: 5px;
+      display: block;
+      padding: 10px;
+      transition: background-color 1s ease-in-out;
+
+      &.active {
+        background-color: $progress-pills;
+        color: #fff;
+      }
+    }
+  }
+}

@@ -60,7 +60,8 @@ gulp.task( 'browserSync', ['php'], function() {
 gulp.task( 'useref', function() {
   return gulp.src( 'app/**/*.php' )
     .pipe( useref() )
-    .pipe( gulpIf( '*.js', uglify() ) )
+    // TODO why is this choking gulp all of a sudden
+    //.pipe( gulpIf( '*.js', uglify() ) )
     .pipe( gulpIf( '*.css', cssnano() ) )
     .pipe( gulp.dest( 'dist' ) )
 });
