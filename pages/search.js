@@ -10,20 +10,20 @@ const Page = withRouter( (props) => (
     <Header title={`Xbox Live API`} />
     <style jsx>{`
       .flex {
-        display: flex;
-        flex-direction: row;
+        display: grid;
+        grid-template-columns: 1fr;
       }
-      
-      .flex-group {
-        width: 50%;
-        grow: 1;
+      @media (min-width: 650px) {
+        .flex {
+          grid-template-columns: .2fr 1fr;
+        }
       }
     `}</style>
     <div className={`flex`}>
-      <div className={`flex-group`}>
+      <div>
         <UserCard data={props.data} />
       </div>
-      <div className={`flex-group`}>
+      <div>
         <ActivityCard data={props.activityData} />
       </div>
     </div>
@@ -34,6 +34,7 @@ const Page = withRouter( (props) => (
 Page.getInitialProps = async function (context) {
   const apiHeaders = {
     'X-AUTH': '1aa66306d38baca0e5ded32ab8ff437c8a72bcb5',
+    //'X-AUTH': '3464bec5b15e8eba49519b9378bb3959cd0b79af',
     'Cache-Control': 'no-cache',
     'Access-Control-Allow-Origin': '*',
     'Content-Type': 'application/json'
