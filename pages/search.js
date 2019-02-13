@@ -15,10 +15,10 @@ const Page = withRouter( (props) => (
       }
     `}</style>
     <div className={`flex`}>
-      <div className={`flex-group-a`}>
+      <div>
         <UserCard data={props.data} />
       </div>
-      <div className={`flex-group-b`}>
+      <div>
         <ActivityCard data={props.activityData} />
       </div>
     </div>
