@@ -18,7 +18,8 @@ const ActivityCard = (props) => (
 
       .content-wrapper {
         position: relative;
-        border: 1px solid #333;
+        border: 1px solid #007800;
+        box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
       }
 
       h3 {
@@ -30,6 +31,7 @@ const ActivityCard = (props) => (
         font-size: 20px;
         font-weight: normal;
         border-radius: 5px 5px 0 0;
+        box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
       }
 
       h3 span {
@@ -63,6 +65,14 @@ const ActivityCard = (props) => (
         padding: 25px 50px 20px 40px;
         display: inline-block;
         vertical-align: middle;
+      }
+
+      .clip-thumbnail {
+        margin-bottom: -4px;
+      }
+
+      .achievment {
+        margin-bottom: -4px;
       }
 
       @keyframes badgeAnimation {
