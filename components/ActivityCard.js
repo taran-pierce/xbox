@@ -44,9 +44,9 @@ const ActivityCard = (props) => (
       .tag-wrapper {
         background: #01770C;
         position: absolute;
-        border-radius: 100px;
+        border-radius: 5vw;
         color: white;
-        font-size: 24px;
+        font-size: 1.3vw;
         font-family: sans-serif;
         left: 10px;
         top: 15px;
@@ -55,14 +55,14 @@ const ActivityCard = (props) => (
       }
 
       .content-icon {
-        max-width: 100px;
-        border-radius: 100px;
+        max-width: 5vw;
+        border-radius: 5vw;
         display: inline-block;
         vertical-align: middle;
       }
 
       .tag-wrapper span {
-        padding: 25px 50px 20px 40px;
+        padding: .5vw 2.25vw .5vw 1.5vw;
         display: inline-block;
         vertical-align: middle;
       }
@@ -99,7 +99,7 @@ const ActivityCard = (props) => (
           <div className="content-wrapper">
             <div className="tag-wrapper">
               <img className="content-icon" src={activity.contentImageUri} />
-              <span>{activity.achievementName}</span>
+              {activity.achievementName ? <span>{activity.achievementName}</span> : ''}
             </div>
             <img className="clip-thumbnail" src={activity.clipThumbnail} />
             <img className="achievment" src={activity.achievementIcon} />
