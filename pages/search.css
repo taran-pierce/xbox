@@ -1,0 +1,125 @@
+/* Grid setup */
+.layout-container {
+  background: url('../images/story-bg-sm.jpg') no-repeat;
+  background-size: cover;
+  background-position: center center;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: .25fr 2fr .25fr;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  justify-items: center;
+  align-items: stretch;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.main-container {
+  grid-row: 2;
+}
+
+footer {
+  grid-row: 3;
+  color: #d4ff11;
+  padding: 10px;
+}
+
+main {
+  display: grid;
+  grid-template-rows: 3fr 2fr;
+  justify-content: center;
+  align-items: center;
+  min-height: 100%;
+}
+
+/* Typography */
+h1 {
+  font-size: 72px;
+  letter-spacing: 0.25rem;
+  text-align: center;
+  text-transform: uppercase;
+  color: #F6EFD7;
+  text-shadow: 10px 10px 30px rgba(0, 0, 0, 0.8);
+  opacity: 0;
+  animation: HeroAnimation 3s 0.2s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+a {
+  font-size: 36px;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #EAFF62;
+  /*opacity: 0; */
+  text-shadow: 10px 10px 30px rgba(0, 0, 0, 0.8);
+  /*animation: HeroAnimation 3s 0.2s forwards cubic-bezier(0.2, 0.8, 0.2, 1);*/
+  align-self: flex-start;
+  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+a:hover {
+  transform: translateY(-10px);
+}
+
+
+
+@media (min-width: 768px) {
+  .layout-container {
+    background: url('../images/story-bg-md.jpg') no-repeat;
+    background-position: center center;
+    background-size: cover;
+    grid-template-columns: 1fr 740px 1fr;
+    grid-template-rows: 80px 1fr 80px;
+  }
+
+  .main-container {
+    grid-column: 2;
+  }
+
+  footer {
+    grid-column: span 3;
+  }
+}
+
+@media (min-width: 992px) {
+  .layout-container {
+    background: url('../images/story-bg-lg.jpg') no-repeat;
+    background-size: cover;
+    background-position: center center;
+    grid-template-columns: 1fr 960px 1fr;
+    grid-template-rows: 120px 1fr 120px;
+  }
+
+  .main-container {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  h1 {
+    font-size: 110px;
+  }
+
+  footer {
+    grid-row: 3;
+    align-self: end;
+  }
+}
+
+@media (min-width: 1600px) {
+  .layout-container {
+    background: url('../images/story-bg-xl.jpg') no-repeat; */
+    background-size: cover;
+    background-position: center center;
+  }
+}
+ 
+@keyframes HeroAnimation {
+  0% {
+      opacity: 0;
+      transform: translateY(20px)
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0px)
+  }
+}

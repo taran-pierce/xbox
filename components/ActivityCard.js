@@ -10,6 +10,71 @@ const ActivityCard = (props) => (
         margin: 0;
         padding: 0;
       }
+
+      li {
+        padding: 20px;
+        padding-bottom: 0;
+      }
+
+      .content-wrapper {
+        position: relative;
+        border: 1px solid #333;
+      }
+
+      h3 {
+        background: #01770C;
+        margin-bottom: 0;
+        padding: 15px;
+        color: white;
+        font-family: sans-serif;
+        font-size: 20px;
+        font-weight: normal;
+        border-radius: 5px 5px 0 0;
+      }
+
+      h3 span {
+        text-align: right;
+        font-weight: normal;
+        float: right;
+        font-size: 20px;
+      }
+
+      .tag-wrapper {
+        background: #01770C;
+        position: absolute;
+        border-radius: 100px;
+        color: white;
+        font-size: 24px;
+        font-family: sans-serif;
+        left: 10px;
+        top: 15px;
+        opacity: 0;
+        animation: badgeAnimation 3s 0.2s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+
+      .content-icon {
+        max-width: 100px;
+        border-radius: 100px;
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+      .tag-wrapper span {
+        padding: 25px 50px 20px 40px;
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+      @keyframes badgeAnimation {
+        0% {
+            opacity: 0;
+            transform: translateY(20px)
+        }
+        100% {
+            opacity: .9;
+            transform: translateY(0)
+        }
+      }
     `}</style>
     <ul>
       <li>
@@ -17,14 +82,18 @@ const ActivityCard = (props) => (
       </li>
       {props.data.activityItems.map( (activity) => (
         <li>
-          Type: {activity.activityItemType}
-          <br />
-          Name: {activity.achievementName}
-          <br />
-          Title: {activity.contentTitle}
-          <img src={activity.clipThumbnail} />
-          <img src={activity.contentImageUri} />
-          <img src={activity.achievementIcon} />
+          <h3>
+            {activity.contentTitle}
+            <span>{activity.activityItemType}</span>
+          </h3>
+          <div className="content-wrapper">
+            <div className="tag-wrapper">
+              <img className="content-icon" src={activity.contentImageUri} />
+              <span>{activity.achievementName}</span>
+            </div>
+            <img className="clip-thumbnail" src={activity.clipThumbnail} />
+            <img className="achievment" src={activity.achievementIcon} />
+          </div>
         </li>
       ))}
     </ul>
