@@ -9,11 +9,18 @@ const ActivityCard = (props) => (
         list-style-type: none;
         margin: 0;
         padding: 0;
+        display: grid;
+        grid-template-rows: 30px 1fr;
+        grid-template-columns: 1fr 1fr;
       }
 
       li {
         padding: 20px;
         padding-bottom: 0;
+      }
+
+      li.title {
+        grid-colum: span 2;
       }
 
       .content-wrapper {
@@ -92,7 +99,7 @@ const ActivityCard = (props) => (
       }
     `}</style>
     <ul>
-      <li>
+      <li className="title">
         <h4>Activity Feed</h4>
       </li>
       {props.data.activityItems.map( (activity) => (
