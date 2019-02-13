@@ -41,6 +41,11 @@ const ActivityCard = (props) => (
         font-size: 20px;
       }
 
+      h3 img {
+        border-radius: 2vw;
+        max-width: 2vw;
+      }
+
       .tag-wrapper {
         background: #01770C;
         position: absolute;
@@ -94,7 +99,7 @@ const ActivityCard = (props) => (
         <li>
           <h3>
             {activity.contentTitle}
-            <span>{activity.activityItemType}</span>
+            <span>{activity.activityItemType == 'Achievement' ? <img src="/static/trophy.png" /> : activity.activityItemType }</span>
           </h3>
           <div className="content-wrapper">
             <div className="tag-wrapper">
