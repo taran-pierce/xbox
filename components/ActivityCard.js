@@ -4,23 +4,19 @@ const ActivityCard = (props) => (
       img {
         max-width: 100%;
       }
-      
+
       ul {
         list-style-type: none;
         margin: 0;
         padding: 0;
         display: grid;
         grid-template-rows: 30px 1fr;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
       }
 
       li {
         padding: 20px;
         padding-bottom: 0;
-      }
-
-      li.title {
-        grid-colum: span 2;
       }
 
       .content-wrapper {
@@ -85,6 +81,16 @@ const ActivityCard = (props) => (
 
       .achievment {
         margin-bottom: -4px;
+      }
+
+      @media (min-width: 550px) {
+        ul {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        li.title {
+          grid-column: span 2;
+        }
       }
 
       @keyframes badgeAnimation {
