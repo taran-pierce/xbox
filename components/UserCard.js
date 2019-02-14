@@ -88,7 +88,7 @@ class UserCard extends React.Component {
 
           @media (min-width: 768px) {
             .user-details.scrolling {
-              width: 15%;
+              width: 22%;
               position: fixed;
             }
           }
