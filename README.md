@@ -5,6 +5,8 @@ A project to interact with the Xbox Live API and see what kind of data you can g
 * `git clone https://github.com/taran-pierce/xbox.git`
 * `cd xbox`
 * `npm install`
+* open `utilities/apiHeaders.js` and enter your Xbox Live API key
+  * https://xboxapi.com/ - works with a free account
 
 ## Commands
 * `npm run dev`
