@@ -1,4 +1,4 @@
-# Xbox Live API
+# Xbox Live API `1.1.0`
 A project to interact with the Xbox Live API and see what kind of data you can get back and displaying it.
 
 ## Setup
@@ -22,7 +22,16 @@ This of course can be modified, but the gulpfile.js will need to be updated as w
   |-components
   |  |-Header.js
   |  |-js
+  | 
+  |-utilities
+  |  |-apiHeaders.js
 ```
+
+### Current Features
+* Enter Gamer Tag and the search page returns the users:
+  * Profile
+  * Activity Feed
+  * Game Clips
 
 ### Upcoming Features
 * separate routes for different data from the API
