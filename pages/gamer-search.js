@@ -4,23 +4,30 @@ import fetch from 'isomorphic-unfetch'
 import Header from '../components/Header'
 import UserCard from '../components/UserCard'
 import Link from 'next/link'
-import ActivityCard from '../components/ActivityCard'
-import Clips from '../components/Clips'
+import Head from '../components/Head'
 
 const Page = withRouter( (props) => (
   <div>
-    <Header title={`Xbox Live API`} />
-    <style jsx>{`
+    <Head title={`Gamer Search`} gamerTag={props.gamerTag} />
+    <style global jsx>{`
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+      }
+      
       .flex {
         display: grid;
         grid-template-columns: 1fr;
       }
+      
       @media (min-width: 650px) {
         .flex {
           grid-template-columns: .3fr 1fr;
         }
       }
     `}</style>
+    <Header title={`Xbox Live API`} />
     <div className={`flex`}>
       <div>
         <UserCard data={props.data} />

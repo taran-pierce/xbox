@@ -15,11 +15,10 @@ const Clips = (props) => (
       }
       
       li {
-        width: 20%;
+        width: 33.33%;
         grow: 0;
       }
     `}</style>
-    <h4>Clips</h4>
     <ul>
       {props.data.map( (clip) => (
         <li>

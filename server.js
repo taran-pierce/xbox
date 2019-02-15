@@ -25,6 +25,16 @@ app.prepare()
     
       app.render(req, res, actualPage, queryParams)
     })
+  
+    server.get('/activity/:xuid/:gamerTag', (req, res) => {
+      const actualPage = '/activity'
+      const queryParams = {
+        xuid: req.params.xuid,
+        gamerTag: req.params.gamerTag
+      }
+    
+      app.render(req, res, actualPage, queryParams)
+    })
     
     server.get('*', (req, res) => {
       return handle(req, res)

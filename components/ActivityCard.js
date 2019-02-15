@@ -109,7 +109,7 @@ const ActivityCard = (props) => (
         <h4>Activity Feed</h4>
       </li>
       {props.data.activityItems.map( (activity) => (
-        <li>
+        <li key={activity.contentImageUri}>
           <h3>
             {activity.contentTitle}
             <span>{activity.activityItemType == 'Achievement' ? <img src="/static/trophy.png" /> : activity.activityItemType }</span>
