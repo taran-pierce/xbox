@@ -1,17 +1,18 @@
 {
   "name": "xbox",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "next",
+    "dev": "node server.js",
     "build": "next build",
-    "start": "next start"
+    "start": "NODE_ENV=production node server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.16.4",
     "isomorphic-unfetch": "^3.0.0",
     "next": "^8.0.0",
     "react": "^16.8.1",
