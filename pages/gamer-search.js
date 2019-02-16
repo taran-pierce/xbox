@@ -44,6 +44,11 @@ const Page = withRouter( (props) => (
               <a>Game Clips</a>
             </Link>
           </li>
+          <li>
+            <Link href={`/presence/${props.xuid}/${props.gamerTag}`}>
+              <a>Presence</a>
+            </Link>
+          </li>
         </ul>
       </div>
     </div>
