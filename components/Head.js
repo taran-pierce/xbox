@@ -1,11 +1,11 @@
-import nextHead from 'next/head'
+import NextHead from 'next/head'
 
 const Head = (props) => (
   <div>
-    <nextHead>
+    <NextHead>
       <title>{props.title} - Xbox Live API</title>
       <meta name="viewport" content="width=device-width, initial-scale=1" />
-    </nextHead>
+    </NextHead>
   </div>
 )
 
