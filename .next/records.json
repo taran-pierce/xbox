@@ -1,0 +1,39 @@
+{
+  "modules": {
+    "byIdentifier": {
+      "multi node_modules/next/dist/client/next": 0
+    },
+    "usedIds": {
+      "0": 0
+    }
+  },
+  "chunks": {
+    "byName": {
+      "commons": 0,
+      "static/runtime/webpack.js": 1,
+      "static/runtime/main.js": 2,
+      "static/tWNje0Hef4z9~f1fVHG8E/pages/_app.js": 3,
+      "static/tWNje0Hef4z9~f1fVHG8E/pages/_error.js": 4,
+      "static/tWNje0Hef4z9~f1fVHG8E/pages/activity.js": 5,
+      "static/tWNje0Hef4z9~f1fVHG8E/pages/game-clips.js": 6,
+      "static/tWNje0Hef4z9~f1fVHG8E/pages/gamer-search.js": 7,
+      "static/tWNje0Hef4z9~f1fVHG8E/pages/index.js": 8,
+      "static/tWNje0Hef4z9~f1fVHG8E/pages/presence.js": 9,
+      "static/tWNje0Hef4z9~f1fVHG8E/pages/search.js": 10
+    },
+    "bySource": {},
+    "usedIds": [
+      0,
+      1,
+      10,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ]
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "modules": {
+    "byIdentifier": {
+      "multi private-next-pages/activity.js": 0,
+      "multi private-next-pages/game-clips.js": 1,
+      "multi private-next-pages/gamer-search.js": 2,
+      "multi private-next-pages/index.js": 3,
+      "multi private-next-pages/presence.js": 4,
+      "multi private-next-pages/search.js": 5,
+      "multi next/dist/pages/_app": 6,
+      "multi next/dist/pages/_error": 7,
+      "multi next/dist/pages/_document": 8
+    },
+    "usedIds": {
+      "0": 0,
+      "1": 1,
+      "2": 2,
+      "3": 3,
+      "4": 4,
+      "5": 5,
+      "6": 6,
+      "7": 7,
+      "8": 8
+    }
+  },
+  "chunks": {
+    "byName": {
+      "static/tWNje0Hef4z9~f1fVHG8E/pages/_app.js": 0,
+      "static/tWNje0Hef4z9~f1fVHG8E/pages/_document.js": 1,
+      "static/tWNje0Hef4z9~f1fVHG8E/pages/_error.js": 2,
+      "static/tWNje0Hef4z9~f1fVHG8E/pages/activity.js": 3,
+      "static/tWNje0Hef4z9~f1fVHG8E/pages/game-clips.js": 4,
+      "static/tWNje0Hef4z9~f1fVHG8E/pages/gamer-search.js": 5,
+      "static/tWNje0Hef4z9~f1fVHG8E/pages/index.js": 6,
+      "static/tWNje0Hef4z9~f1fVHG8E/pages/presence.js": 7,
+      "static/tWNje0Hef4z9~f1fVHG8E/pages/search.js": 8
+    },
+    "bySource": {},
+    "usedIds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ]
+  }
+}

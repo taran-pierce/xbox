@@ -1,0 +1,50 @@
+{
+  "devFiles": [],
+  "pages": {
+    "/activity": [
+      "static/runtime/webpack-f0c6edbea5b547edc23f.js",
+      "static/chunks/commons.c78d7ccfa33ccec91fcf.js",
+      "static/runtime/main-72665538349b6d31092b.js"
+    ],
+    "/game-clips": [
+      "static/runtime/webpack-f0c6edbea5b547edc23f.js",
+      "static/chunks/commons.c78d7ccfa33ccec91fcf.js",
+      "static/runtime/main-72665538349b6d31092b.js"
+    ],
+    "/gamer-search": [
+      "static/runtime/webpack-f0c6edbea5b547edc23f.js",
+      "static/chunks/commons.c78d7ccfa33ccec91fcf.js",
+      "static/runtime/main-72665538349b6d31092b.js"
+    ],
+    "/index": [
+      "static/runtime/webpack-f0c6edbea5b547edc23f.js",
+      "static/chunks/commons.c78d7ccfa33ccec91fcf.js",
+      "static/runtime/main-72665538349b6d31092b.js"
+    ],
+    "/presence": [
+      "static/runtime/webpack-f0c6edbea5b547edc23f.js",
+      "static/chunks/commons.c78d7ccfa33ccec91fcf.js",
+      "static/runtime/main-72665538349b6d31092b.js"
+    ],
+    "/search": [
+      "static/runtime/webpack-f0c6edbea5b547edc23f.js",
+      "static/chunks/commons.c78d7ccfa33ccec91fcf.js",
+      "static/runtime/main-72665538349b6d31092b.js"
+    ],
+    "/_app": [
+      "static/runtime/webpack-f0c6edbea5b547edc23f.js",
+      "static/chunks/commons.c78d7ccfa33ccec91fcf.js",
+      "static/runtime/main-72665538349b6d31092b.js"
+    ],
+    "/_error": [
+      "static/runtime/webpack-f0c6edbea5b547edc23f.js",
+      "static/chunks/commons.c78d7ccfa33ccec91fcf.js",
+      "static/runtime/main-72665538349b6d31092b.js"
+    ],
+    "/": [
+      "static/runtime/webpack-f0c6edbea5b547edc23f.js",
+      "static/chunks/commons.c78d7ccfa33ccec91fcf.js",
+      "static/runtime/main-72665538349b6d31092b.js"
+    ]
+  }
+}
