@@ -1,8 +1,8 @@
 {
   "name": "xbox",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "pages/index.js",
   "scripts": {
     "dev": "next",
     "build": "next build",
@@ -12,8 +12,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@zeit/next-sass": "^1.0.1",
     "isomorphic-unfetch": "^3.0.0",
     "next": "^8.0.0",
+    "node-sass": "^4.13.1",
     "react": "^16.8.1",
     "react-dom": "^16.8.1"
   }

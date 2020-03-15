@@ -1,4 +1,4 @@
-# Xbox Live API `1.1.0`
+# Xbox Live API `2.0.0`
 A project to interact with the Xbox Live API and see what kind of data you can get back and displaying it.
 
 ## Setup
@@ -24,7 +24,7 @@ This of course can be modified, but the gulpfile.js will need to be updated as w
   |-components
   |  |-Header.js
   |  |-js
-  | 
+  |
   |-utilities
   |  |-apiHeaders.js
 ```
