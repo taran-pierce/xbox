@@ -1,11 +1,11 @@
 {
   "name": "xbox",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "description": "",
   "main": "pages/index.js",
   "scripts": {
     "dev": "next -p process.env.PORT",
-    "build": "next build",
+    "build": "next build && next export",
     "start": "next start -p process.env.PORT"
   },
   "keywords": [],
