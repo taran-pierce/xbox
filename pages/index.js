@@ -46,8 +46,6 @@ const Page = withRouter((props) => {
       isLoading: true,
     })
 
-    console.log('apiHeaders: ', apiHeaders);
-
     try {
       // get the xuid for the gamer tag entered so we can grab other data
       const res = await fetch(`https://xboxapi.com/v2/xuid/${user.gamerTag}`, {
@@ -76,11 +74,11 @@ const Page = withRouter((props) => {
         isLoading: false,
       })
 
-      // getProfile(xuidRes)
+      getProfile(xuidRes)
 
-      // getActivity(xuidRes)
+      getActivity(xuidRes)
 
-      // getClips(xuidRes)
+      getClips(xuidRes)
 
     } catch (e) {
       console.log('an error occurred: ', e);
