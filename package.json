@@ -5,8 +5,8 @@
   "main": "pages/index.js",
   "scripts": {
     "dev": "next -p process.env.PORT",
-    "build": "next build && next export",
-    "start": "next start -p process.env.PORT"
+    "build": "next build",
+    "start": "next build && next start -p process.env.PORT"
   },
   "keywords": [],
   "author": "",
