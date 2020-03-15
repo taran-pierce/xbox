@@ -142,6 +142,8 @@ const Page = withRouter((props) => {
     },
   ]
 
+  console.log('process.env: ', process.env)
+
   return (
     <>
       <Header title={`Xbox Live API`} userData={user}>
