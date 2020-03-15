@@ -13,15 +13,8 @@ app.prepare().then(() => {
     const parsedUrl = parse(req.url, true)
     const {pathname, query} = parsedUrl
 
-    // example of looking for specific paths
-    if (pathname === '/a') {
-      app.render(req, res, '/b', query)
-    } else if (pathname === '/b') {
-      app.render(req, res, '/a', query)
-    } else {
-      // handles all other requests
-      handle(req, res, parsedUrl)
-    }
+    // handles all other requests
+    handle(req, res, parsedUrl)
   }).listen(process.env.PORT || 3000, err => {
     if (err) throw err
     console.log(`> Ready on http://localhost:${process.env.PORT || 3000}`)

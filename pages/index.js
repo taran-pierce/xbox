@@ -8,6 +8,7 @@ import Form from '../components/Form'
 import Clips from '../components/Clips'
 import Loading from '../components/Loading'
 
+
 const Page = withRouter((props) => {
   const [user, setUser] = useState({
     gamerTag: '',
@@ -35,7 +36,7 @@ const Page = withRouter((props) => {
   })
 
   const handleChange = e => {
-    setUser({ ...user, gamerTag: e.target.value });
+    setUser({...user, gamerTag: e.target.value});
   };
 
   const handleSubmit = async e => {
@@ -44,6 +45,8 @@ const Page = withRouter((props) => {
     setUserIsLoading({
       isLoading: true,
     })
+
+    console.log('apiHeaders: ', apiHeaders);
 
     try {
       // get the xuid for the gamer tag entered so we can grab other data
@@ -73,11 +76,11 @@ const Page = withRouter((props) => {
         isLoading: false,
       })
 
-      getProfile(xuidRes)
+      // getProfile(xuidRes)
 
-      getActivity(xuidRes)
+      // getActivity(xuidRes)
 
-      getClips(xuidRes)
+      // getClips(xuidRes)
 
     } catch (e) {
       console.log('an error occurred: ', e);
@@ -141,8 +144,6 @@ const Page = withRouter((props) => {
       onChange: handleChange,
     },
   ]
-
-  console.log('process.env: ', process.env)
 
   return (
     <>
