@@ -1,5 +1,5 @@
 const apiHeaders = {
-  'X-AUTH': 'XBOX_API_KEY_GOES_HERE',
+  'X-AUTH': process.env.apiKey,
   'Cache-Control': 'no-cache',
   'Access-Control-Allow-Origin': '*',
   'Content-Type': 'application/json'
