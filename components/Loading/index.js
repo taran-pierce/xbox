@@ -11,7 +11,7 @@ export default function Loading(props) {
         <h4>{message}</h4>
       )}
       <div className={`loading-spinner`}>
-        <object type={`image/svg+xml`} data={`/static/img/spinner.svg`}></object>
+        <object type={`image/svg+xml`} data={`/img/spinner.svg`}></object>
       </div>
     </>
   );

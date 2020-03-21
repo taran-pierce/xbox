@@ -7,22 +7,14 @@ export default function Clips(props) {
   return (
     <>
       <div className={`clip-container`}>
-        {data.map((clip) => {
-          const {
-            titleName,
-          } = clip
-
-          return (
-            <>
-              <h4>{titleName}</h4>
-            </>
-          )
-        })}
+        {data.map((clip, index) => (
+          <h4 key={index}>{clip.titleName}</h4>
+        ))}
       </div>
     </>
   )
 }
 
 Clips.propTypes = {
-  data: PropTypes.object.isRequired,
+  data: PropTypes.array.isRequired,
 }

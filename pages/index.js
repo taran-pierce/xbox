@@ -5,9 +5,8 @@ import Header from '../components/Header'
 import GamerCard from '../components/GamerCard'
 import apiHeaders from '../utilities/apiHeaders'
 import Form from '../components/Form'
-import Clips from '../components/Clips'
 import Loading from '../components/Loading'
-
+import UserFeed from '../components/UserFeed'
 
 const Page = withRouter((props) => {
   const [user, setUser] = useState({
@@ -86,7 +85,6 @@ const Page = withRouter((props) => {
   };
 
   async function getProfile(xuid) {
-    console.log('running getProfile with: ', xuid)
     try {
       // get the profile data
       const res = await fetch(`https://xboxapi.com/v2/${xuid}/profile`, {
@@ -95,7 +93,6 @@ const Page = withRouter((props) => {
         body: JSON.stringify(),
       });
       const data = await res.json()
-      console.log('data: ', data);
 
       setUserProfile({profile: data});
     } catch (e) {
@@ -128,7 +125,10 @@ const Page = withRouter((props) => {
         body: JSON.stringify(),
       })
       const data = await res.json()
-      setUserClips({clips: data})
+
+      setUserClips({
+        clips: data
+      })
     } catch {
       console.log('an error occurred: ', e)
     }
@@ -171,8 +171,12 @@ const Page = withRouter((props) => {
       {user.gamerCard && (
         <GamerCard data={user.gamerCard} />
       )}
-      {userClips.clips && (
-        <Clips data={userClips.clips} />
+      {(userClips.clips && userProfile.profile && userActivity.activity) && (
+        <UserFeed
+          clips={userClips.clips}
+          profile={userProfile.profile}
+          activity={userActivity.activity}
+        />
       )}
     </>
   )
