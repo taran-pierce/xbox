@@ -1,6 +1,14 @@
-.loading-spinner {
-  animation: spin 1.5s infinite;
-  max-width: 80px;
+.loading-container {
+  h4 {
+    text-align: center;
+  }
+
+  .loading-spinner {
+    animation: spin 1.5s infinite;
+    max-width: 80px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 @-webkit-keyframes spin {

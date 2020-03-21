@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import './form.scss'
 
 export default function Form(props) {
   const {
@@ -17,7 +18,7 @@ export default function Form(props) {
             <input type={input.type} id={input.id} name={input.name} onChange={input.onChange} />
           </label>
         ))}
-        <button>Submit</button>
+        <button>Search</button>
       </form>
     </>
   );

@@ -7,11 +7,13 @@ export default function Loading(props) {
 
   return (
     <>
-      {message && (
-        <h4>{message}</h4>
-      )}
-      <div className={`loading-spinner`}>
-        <object type={`image/svg+xml`} data={`/img/spinner.svg`}></object>
+      <div className={`loading-container`}>
+        {message && (
+          <h4>{message}</h4>
+        )}
+        <div className={`loading-spinner`}>
+          <object type={`image/svg+xml`} data={`/img/spinner.svg`}></object>
+        </div>
       </div>
     </>
   );

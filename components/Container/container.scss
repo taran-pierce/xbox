@@ -1,0 +1,16 @@
+@import '../../styles/variables';
+
+.container {
+  background: $white;
+  border-left: 1px solid $gray-light;
+  border-right: 1px solid $gray-light;
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2rem 1rem;
+  }
+}

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import {withRouter} from 'next/router'
+import SiteLayout from '../components/SiteLayout'
 import Header from '../components/Header'
 import GamerCard from '../components/GamerCard'
 import apiHeaders from '../utilities/apiHeaders'
@@ -143,41 +144,63 @@ const Page = withRouter((props) => {
     },
   ]
 
+  const formData = {
+    inputs: formInputs,
+    handleChange,
+    handleSubmit,
+    id: `gamer-tag-form`,
+    method: `POST`
+  }
+
   return (
     <>
-      <Header title={`Xbox Live API`} userData={user}>
+      <SiteLayout
+        title={`Xbox Live API`}
+        user={user.gamerCard}
+        formData={formData}
+      >
+        {/* Display introduction information if there is no gamerCard set */}
+        {!user.gamerCard && (
+          <>
+            <h1>Search for Xbox Gamertag</h1>
+            <p>Use the form below to search for an Xbox gamertag. This service uses the Xbox Live API and will retrieve information about any gamertag that is uploaded to the system.</p>
+            <h4>Information such as:</h4>
+            <ul>
+              <li>Profile</li>
+              <li>Recorded Clips</li>
+              <li>Recent Activity</li>
+              <li>Gamer Card</li>
+              <li>and more...</li>
+            </ul>
+          </>
+        )}
+        {/* If there is no current gamerCard then display the Form to get one */}
+        {!user.gamerCard && (
+          // Display the Loading icon if we are fetching data
+          !userIsLoading.isLoading ?
+            <Form
+              handleSubmit={handleSubmit}
+              handleChange={handleChange}
+              id={`gamer-tag-form`}
+              method={`POST`}
+              inputs={formInputs}
+            />
+            :
+            <Loading message={`Fetching gamer information about ${user.gamerTag}`} />
+        )}
+        {/* Display the gamerCard once we have the data back from the API */}
         {user.gamerCard && (
-          <Form
-            handleSubmit={handleSubmit}
-            handleChange={handleChange}
-            id={`gamer-tag-form`}
-            method={`POST`}
-            inputs={formInputs}
+          <GamerCard data={user.gamerCard} />
+        )}
+        {/* Display the User Feed once we have back the data for clips, profile and activity */}
+        {(userClips.clips && userProfile.profile && userActivity.activity) && (
+          <UserFeed
+            clips={userClips.clips}
+            profile={userProfile.profile}
+            activity={userActivity.activity}
           />
         )}
-      </Header>
-      {!user.gamerCard && (
-        !userIsLoading.isLoading ?
-          <Form
-            handleSubmit={handleSubmit}
-            handleChange={handleChange}
-            id={`gamer-tag-form`}
-            method={`POST`}
-            inputs={formInputs}
-          />
-          :
-          <Loading message={`Fetching gamer information about ${user.gamerTag}`} />
-      )}
-      {user.gamerCard && (
-        <GamerCard data={user.gamerCard} />
-      )}
-      {(userClips.clips && userProfile.profile && userActivity.activity) && (
-        <UserFeed
-          clips={userClips.clips}
-          profile={userProfile.profile}
-          activity={userActivity.activity}
-        />
-      )}
+      </SiteLayout>
     </>
   )
 });

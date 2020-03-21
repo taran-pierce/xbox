@@ -1,0 +1,39 @@
+@import '../../styles/variables';
+
+form {
+  button {
+    border-radius: 0;
+    padding: 1rem 2rem;
+    background: $primary;
+    color: $white;
+    transition: all .5s ease-in-out;
+    font-weight: 500;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background: lighten($primary, 8%);
+      cursor: pointer;
+    }
+  }
+
+  input {
+    background: $white;
+    border: 1px solid $gray-light;
+    padding: 1rem;
+    margin-left: 1rem;
+
+    &:focus,
+    &:active {
+      outline: 2px outset $primary;
+    }
+  }
+
+  label {
+    color: $gray-dark;
+  }
+
+  label + button {
+    margin-left: 1rem;
+  }
+}
