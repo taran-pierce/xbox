@@ -1,7 +1,7 @@
 {
   "name": "xbox",
   "version": "2.1.1",
-  "description": "",
+  "description": "Connects to Xbox Live API to display information about Users of Xbox Live. Search for gamer tags, profiles, clips and recent activity.",
   "main": "pages/index.js",
   "scripts": {
     "dev": "node server.js",
