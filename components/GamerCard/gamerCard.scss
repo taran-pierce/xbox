@@ -1,0 +1,35 @@
+@import '../../styles/variables';
+
+.gamer-card {
+  border: 1px solid $gray-light;
+  padding: 2rem;
+
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+
+  .gamer-score {
+    border-radius: 20px;
+    color: $white;
+    background: $secondary;
+    border: 1px solid darken($secondary, 10%);
+    font-size: 50%;
+    position: relative;
+    bottom: 5px;
+    padding: .5rem;
+  }
+}
+
+@media($desktop) {
+  .gamer-card {
+    .flex {
+      display: flex;
+      flex-direction: row;
+
+      .column {
+        flex-grow: 1;
+      }
+    }
+  }
+}

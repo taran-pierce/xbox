@@ -15,5 +15,5 @@ export default function Container(props) {
 }
 
 Container.propTypes = {
-  children: PropTypes.object.isRequired,
+  children: PropTypes.array.isRequired,
 }

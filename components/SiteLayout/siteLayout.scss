@@ -1,3 +1,4 @@
+@import '../../styles/variables';
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap');
 
 html {
@@ -8,6 +9,7 @@ html {
 
 body {
   background: url('/img/main-background.png') top left repeat;
+  color: $black;
   font-family: 'Roboto', Helvetica, sans-serif;
   margin: 0;
   padding: 0;
@@ -16,4 +18,9 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   margin-top: 0;
+}
+
+.error-message {
+  color: $error;
+  font-weight: 500;
 }

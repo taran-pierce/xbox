@@ -8,6 +8,7 @@ export default function Form(props) {
     id,
     method,
     inputs,
+    error,
   } = props
 
   return (
@@ -20,6 +21,12 @@ export default function Form(props) {
         ))}
         <button>Search</button>
       </form>
+      {error.error && (
+        <>
+          <p className={`error-message`}>Sorry there was an issue: {error.message}</p>
+          <p className={`error-message`}>Please try again later.</p>
+        </>
+      )}
     </>
   );
 }

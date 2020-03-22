@@ -2,8 +2,9 @@
 
 .container {
   background: $white;
-  border-left: 1px solid $gray-light;
-  border-right: 1px solid $gray-light;
+  border-left: 1px solid darken($secondary, 10%);
+  border-right: 1px solid darken($secondary, 10%);
+  box-shadow: 0 2px 2px 1px $shadow-2;
 }
 
 @media (min-width: 992px) {
