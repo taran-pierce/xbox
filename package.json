@@ -1,12 +1,16 @@
 {
   "name": "xbox",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "",
   "main": "pages/index.js",
   "scripts": {
     "dev": "node server.js",
     "build": "next build",
     "start": "next build && NODE_ENV=production node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/taran-pierce/xbox.git"
   },
   "keywords": [],
   "author": "",

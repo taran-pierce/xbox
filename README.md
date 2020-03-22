@@ -1,4 +1,4 @@
-# Xbox Live API `2.1.0`
+# Xbox Live API `2.1.1`
 A project to interact with the Xbox Live API and see what kind of data you can get back and displaying it.
 
 ## Setup

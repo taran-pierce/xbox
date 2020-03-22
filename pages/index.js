@@ -8,6 +8,7 @@ import apiHeaders from '../utilities/apiHeaders'
 import Form from '../components/Form'
 import Loading from '../components/Loading'
 import UserFeed from '../components/UserFeed'
+import Footer from '../components/Footer'
 
 const Page = withRouter((props) => {
   const [user, setUser] = useState({
@@ -164,6 +165,9 @@ const Page = withRouter((props) => {
     method: `POST`
   }
 
+  const date = new Date()
+  const year = date.getFullYear()
+
   return (
     <>
       <SiteLayout
@@ -218,6 +222,7 @@ const Page = withRouter((props) => {
             activity={userActivity.activity}
           />
         )}
+        <Footer date={year} />
       </SiteLayout>
     </>
   )
