@@ -22,7 +22,7 @@
     "isomorphic-unfetch": "^3.0.0",
     "minimist": "^1.2.5",
     "next": "^9.3.0",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "react": "^16.8.1",
     "react-dom": "^16.8.1"
   }
